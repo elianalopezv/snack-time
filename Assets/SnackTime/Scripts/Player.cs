@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public float jumpSpeed = 15f;
-	public float gravity = 90f;
+	public float jumpSpeed;
+	public float gravity;
 	private CharacterController controller;
 	private Vector3 moveDirection = Vector3.zero;
 
