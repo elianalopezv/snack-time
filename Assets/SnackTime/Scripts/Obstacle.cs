@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour {
+public class Obstacle : MonoBehaviour {
 
-	private BlockManager manager;
-
+	BlockManager manager;
+	
 	// Use this for initialization
 	void Start () {
 		manager = BlockManager.Instance;

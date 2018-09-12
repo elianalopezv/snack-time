@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.182033, g: 0.2277248, b: 0.30740106, a: 1}
+  m_IndirectSpecularColor: {r: 0.17764653, g: 0.22241011, b: 0.30459356, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -143,6 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314338421}
   - component: {fileID: 314338422}
+  - component: {fileID: 314338423}
   m_Layer: 0
   m_Name: BlockManager
   m_TagString: Untagged
@@ -185,6 +186,22 @@ MonoBehaviour:
     type: 2}
   player: {fileID: 955881976}
   blocksSpeed: 9
+  acceleration: 0.1
+--- !u!114 &314338423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314338420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40123c61f3f35054aa8f4e35cfbf624c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesParent: {fileID: 956157844}
+  obstacles:
+  - {fileID: 4696528660555074, guid: f592d40c7830ad24190d01c5d6d1e0ba, type: 2}
+  - {fileID: 4017659678230696, guid: 1d7386910aad2794386d6d09af63df71, type: 2}
 --- !u!1001 &511318368
 Prefab:
   m_ObjectHideFlags: 0
@@ -232,7 +249,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3da4aad06945bbf4baf801c2aacbc01e, type: 2}
+      objectReference: {fileID: 2100010, guid: 47616bd0cda748d4cbedcfc908506b9d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd01b882aaf0484f9489738f36103dc, type: 2}
   m_IsPrefabAsset: 0
@@ -402,16 +419,6 @@ Prefab:
     - target: {fileID: 4385582782448506, guid: 7eaf8bc797b4b5541bf347112f552136, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114824804435308090, guid: 7eaf8bc797b4b5541bf347112f552136,
-        type: 2}
-      propertyPath: jumpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114824804435308090, guid: 7eaf8bc797b4b5541bf347112f552136,
-        type: 2}
-      propertyPath: gravity
-      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eaf8bc797b4b5541bf347112f552136, type: 2}
@@ -590,6 +597,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4385582782448506, guid: 7eaf8bc797b4b5541bf347112f552136,
     type: 2}
   m_PrefabInternal: {fileID: 706255060}
+--- !u!1 &956157843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956157844}
+  m_Layer: 0
+  m_Name: Obstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956157844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956157843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.092208, y: 4.014058, z: -3.5232327}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059179915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1682682861543346, guid: fbd01b882aaf0484f9489738f36103dc,
@@ -642,7 +677,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -670,13 +705,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187662978}
-  m_LocalRotation: {x: -0.2419486, y: -0.43231037, z: 0.3396951, w: -0.7994847}
+  m_LocalRotation: {x: 0.50899583, y: 0.7005939, z: -0.425096, w: 0.2634101}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 42.889004, y: -314.01898, z: -27.118002}
+  m_LocalEulerAnglesHint: {x: 59.745003, y: -532.742, z: 76.171005}
 --- !u!1 &1386733263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1682682861543346, guid: fbd01b882aaf0484f9489738f36103dc,

@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class BlockManager : MonoBehaviour {
 
+	[HideInInspector]
+	public static BlockManager Instance;
 	public Transform blockPrefab;
 	public Transform player;
 	public float blocksSpeed;
+	public float acceleration;
 
 	private int totalBlocksScreen = 5;
 	private int totalBlocks;
 	private List<Transform> blocksInScreen = new List<Transform>();
 	private List<Transform> blocksInPool = new List<Transform>();
 	private float poolYPosition = -10f, sceneYPosition = -1.5f;
+	private ObstacleGenerator obstacleGenerator;
 
 
+	void Awake()
+	{
+		Instance = this;
+	}
 	// Use this for initialization
 	void Start () {
 		
 		totalBlocks = transform.childCount;
+		obstacleGenerator = GetComponent<ObstacleGenerator>();
 		
 		for(int i = 0; i < totalBlocksScreen; i++)
 		{
@@ -41,8 +50,9 @@ public class BlockManager : MonoBehaviour {
 		if(LimitDistanceReached())
 		{
 			ExchangeBlocks();
-			
 		}
+
+		blocksSpeed += Time.deltaTime * acceleration;
 	}
 
 	private bool LimitDistanceReached()
@@ -64,6 +74,8 @@ public class BlockManager : MonoBehaviour {
 			lastBlock.position.z + (lastBlock.localScale.z - Time.deltaTime * blocksSpeed));
 
 		blocksInScreen.Add(newBlock);
+		obstacleGenerator.GenerateObstacle(newBlock);
+		
 	}
 
 	private void SendBlockToPool(Transform block)
