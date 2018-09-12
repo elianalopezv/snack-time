@@ -6,20 +6,31 @@ public class BlockManager : MonoBehaviour {
 
 	public Transform blockPrefab;
 	public Transform player;
-	public float blocksSpeed = 15f;
+	public float blocksSpeed;
 
-	private int blocksInScreen;
+	private int totalBlocksScreen = 5;
 	private int totalBlocks;
-	private List<Transform> blocksList = new List<Transform>();
+	private List<Transform> blocksInScreen = new List<Transform>();
+	private List<Transform> blocksInPool = new List<Transform>();
+	private float poolYPosition = -10f, sceneYPosition = -1.5f;
+
 
 	// Use this for initialization
 	void Start () {
 		
 		totalBlocks = transform.childCount;
-		blocksInScreen = totalBlocks - 2;
 		
-		for(int i = 0; i < totalBlocks; i++)
-			blocksList.Add(transform.GetChild(i));
+		for(int i = 0; i < totalBlocksScreen; i++)
+		{
+			blocksInScreen.Add(transform.GetChild(i));
+		}
+		
+		for(int i = totalBlocksScreen; i < totalBlocks; i++)
+		{
+			Transform block = transform.GetChild(i);
+			blocksInPool.Add(block);
+			block.localPosition = new Vector3(block.localPosition.x, poolYPosition, block.localPosition.z);
+		}
 
 
 	}
@@ -29,26 +40,45 @@ public class BlockManager : MonoBehaviour {
 		
 		if(LimitDistanceReached())
 		{
-			SendBlockToEnd();
+			ExchangeBlocks();
+			
 		}
 	}
 
 	private bool LimitDistanceReached()
 	{
-		return ((blocksInScreen - 1) * blockPrefab.localScale.z) >
-			(Mathf.Abs(player.position.z - blocksList[blocksList.Count - 1].position.z));
+		return ((totalBlocksScreen - 3) * blockPrefab.localScale.z) >
+			(Mathf.Abs(player.position.z - blocksInScreen[blocksInScreen.Count - 1].position.z));
 	}
 
-	private void SendBlockToEnd()
+	private void ExchangeBlocks()
 	{
-		Transform blockToSend = blocksList[0];
-		Transform lastBlock = blocksList[blocksList.Count - 1];
-		blocksList.RemoveAt(0);
+		Transform blockToSend = blocksInScreen[0];
+		Transform lastBlock = blocksInScreen[blocksInScreen.Count - 1];
+		blocksInScreen.RemoveAt(0);
+		SendBlockToPool(blockToSend);
+		Transform newBlock = GetBlockFromThePool();
 
-		blockToSend.transform.position = new Vector3(blockToSend.position.x,
-			blockToSend.position.y, 
-			lastBlock.position.z + (blockToSend.localScale.z - Time.deltaTime * blocksSpeed));
+		newBlock.transform.position = new Vector3(lastBlock.position.x,
+			sceneYPosition, 
+			lastBlock.position.z + (lastBlock.localScale.z - Time.deltaTime * blocksSpeed));
 
-		blocksList.Add(blockToSend);
+		blocksInScreen.Add(newBlock);
 	}
+
+	private void SendBlockToPool(Transform block)
+	{
+		block.transform.position = new Vector3(block.transform.localPosition.x, poolYPosition, block.transform.localPosition.z);
+		blocksInPool.Add(block);
+	}
+
+	private Transform GetBlockFromThePool()
+	{
+		int index = Random.Range(0,blocksInPool.Count);
+		Transform block = blocksInPool[index];
+		blocksInPool.RemoveAt(index);
+		return block;
+	}
+
+
 }
