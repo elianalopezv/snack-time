@@ -11,7 +11,8 @@ public class BlockManager : MonoBehaviour {
 	public float blocksSpeed;
 	public float acceleration;
 
-	private int totalBlocksScreen = 5;
+	[HideInInspector]
+	public int totalBlocksScreen = 5;
 	private int totalBlocks;
 	private List<Transform> blocksInScreen = new List<Transform>();
 	private List<Transform> blocksInPool = new List<Transform>();

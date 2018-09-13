@@ -13,6 +13,8 @@ public class ObstacleGenerator : MonoBehaviour {
 		Instantiate(obstacles[Random.Range(0, obstacles.Count)],
 			GetRandomPsitionInBlock(block),
 			Quaternion.Euler(Vector2.zero), obstaclesParent);
+
+		DeleteUselessObstacles();
 	}
 
 	private Vector3 GetRandomPsitionInBlock(Transform block)
@@ -22,5 +24,15 @@ public class ObstacleGenerator : MonoBehaviour {
 		float z = Random.Range(block.position.z - block.localScale.z, block.position.z + block.localScale.z);
 
 		return new Vector3(x,y,z);
+	}
+
+	private void DeleteUselessObstacles()
+	{
+		int obstaclesInScene = BlockManager.Instance.totalBlocksScreen;
+		
+		if(obstaclesParent.childCount > obstaclesInScene)
+		{
+			Destroy(obstaclesParent.GetChild(0).gameObject);
+		}
 	}
 }

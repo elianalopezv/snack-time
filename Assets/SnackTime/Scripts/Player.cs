@@ -25,4 +25,9 @@ public class Player : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 	}
+
+	void OnBecameInvisible()
+	{
+		LevelManager.Instance.LoseGame();
+	}
 }
