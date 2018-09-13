@@ -11,17 +11,17 @@ public class ObstacleGenerator : MonoBehaviour {
 	public void GenerateObstacle(Transform block)
 	{
 		Instantiate(obstacles[Random.Range(0, obstacles.Count)],
-			GetRandomPsitionInBlock(block),
+			GetRandomPositionInBlock(block),
 			Quaternion.Euler(Vector2.zero), obstaclesParent);
 
 		DeleteUselessObstacles();
 	}
 
-	private Vector3 GetRandomPsitionInBlock(Transform block)
+	private Vector3 GetRandomPositionInBlock(Transform block)
 	{
 		float x = block.position.x;
 		float y = block.position.y + 1;
-		float z = Random.Range(block.position.z - block.localScale.z, block.position.z + block.localScale.z);
+		float z = Mathf.RoundToInt(Random.Range(block.position.z - block.localScale.z, block.position.z + block.localScale.z));
 
 		return new Vector3(x,y,z);
 	}

@@ -16,9 +16,9 @@ public class BlockManager : MonoBehaviour {
 	private int totalBlocks;
 	private List<Transform> blocksInScreen = new List<Transform>();
 	private List<Transform> blocksInPool = new List<Transform>();
-	private float poolYPosition = -10f, sceneYPosition = -1.5f;
+	private float poolYPosition = -20f, sceneYPosition = -1.5f;
 	private ObstacleGenerator obstacleGenerator;
-
+	private bool changeDone = true;
 
 	void Awake()
 	{
@@ -48,9 +48,11 @@ public class BlockManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(LimitDistanceReached())
+		if(LimitDistanceReached() && changeDone)
 		{
+			changeDone = false;
 			ExchangeBlocks();
+			changeDone = true;
 		}
 
 		blocksSpeed += Time.deltaTime * acceleration;

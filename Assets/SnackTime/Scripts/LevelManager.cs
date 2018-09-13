@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		Instance = this;
 		Time.timeScale = 1;
+		Application.targetFrameRate = 60;
 	}
 	void Update()
 	{

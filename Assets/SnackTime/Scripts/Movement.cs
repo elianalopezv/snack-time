@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.Translate(-Vector3.forward * manager.blocksSpeed * Time.deltaTime);
+		//transform.Translate(-Vector3.forward * manager.blocksSpeed * Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, transform.position - Vector3.forward, Time.deltaTime * manager.blocksSpeed);
 	}
 }
