@@ -1,89 +1,29 @@
 fileFormatVersion: 2
-guid: 8f047a57d125f0c4ca5320eb42bdc822
+guid: bf4cc134487a2fa4098a17c770a00ec1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube.005
-    100002: Cube.009
-    100004: Cube.011
-    100006: Cube.020
-    100008: Cube.021
-    100010: Cube.022
-    100012: Cube.023
-    100014: Cube.024
-    100016: Cube.025
-    100018: Cube.026
-    100020: Cube.027
-    100022: Cube.028
-    100024: Cube.029
-    100026: Cube.030
-    100028: Cube.031
-    100030: //RootNode
-    400000: Cube.005
-    400002: Cube.009
-    400004: Cube.011
-    400006: Cube.020
-    400008: Cube.021
-    400010: Cube.022
-    400012: Cube.023
-    400014: Cube.024
-    400016: Cube.025
-    400018: Cube.026
-    400020: Cube.027
-    400022: Cube.028
-    400024: Cube.029
-    400026: Cube.030
-    400028: Cube.031
-    400030: //RootNode
+    100000: Cube.018
+    100002: Cube.019
+    100004: Curve.003
+    100006: //RootNode
+    400000: Cube.018
+    400002: Cube.019
+    400004: Curve.003
+    400006: //RootNode
     2100000: No Name
-    2300000: Cube.005
-    2300002: Cube.009
-    2300004: Cube.011
-    2300006: Cube.020
-    2300008: Cube.021
-    2300010: Cube.022
-    2300012: Cube.023
-    2300014: Cube.024
-    2300016: Cube.025
-    2300018: Cube.026
-    2300020: Cube.027
-    2300022: Cube.028
-    2300024: Cube.029
-    2300026: Cube.030
-    2300028: Cube.031
-    3300000: Cube.005
-    3300002: Cube.009
-    3300004: Cube.011
-    3300006: Cube.020
-    3300008: Cube.021
-    3300010: Cube.022
-    3300012: Cube.023
-    3300014: Cube.024
-    3300016: Cube.025
-    3300018: Cube.026
-    3300020: Cube.027
-    3300022: Cube.028
-    3300024: Cube.029
-    3300026: Cube.030
-    3300028: Cube.031
-    4300000: Cube.031
-    4300002: Cube.030
-    4300004: Cube.029
-    4300006: Cube.028
-    4300008: Cube.027
-    4300010: Cube.026
-    4300012: Cube.025
-    4300014: Cube.024
-    4300016: Cube.023
-    4300018: Cube.021
-    4300020: Cube.022
-    4300022: Cube.020
-    4300024: Cube.011
-    4300026: Cube.009
-    4300028: Cube.005
+    2300000: Cube.018
+    2300002: Cube.019
+    2300004: Curve.003
+    3300000: Cube.018
+    3300002: Cube.019
+    3300004: Curve.003
+    4300000: Curve.003
+    4300002: Cube.019
+    4300004: Cube.018
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -139,7 +79,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
