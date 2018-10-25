@@ -14,11 +14,13 @@ public class Player : MonoBehaviour {
 	private float jumpForce = 0;
  	private float invertGravity;
 	private bool mouseUp = true;
+	public Animator animator;
 
 
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<CharacterController>();	
+		animator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour {
 				// Jump! 
 				jumpForce = jumpSpeed;
 				mouseUp = false;
+				animator.SetTrigger("Jump");
 			}
 		}
 
@@ -59,8 +62,4 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	void OnBecameInvisible()
-	{
-		LevelManager.Instance.LoseGame();
-	}
 }
