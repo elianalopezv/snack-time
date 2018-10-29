@@ -7,8 +7,15 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
 
 	public float totalGameTime;
+
+	[Header("Sounds")]
 	public AudioSource backgroundMusic;
 	public AudioSource endMusic;
+
+	[Header("Canvas")]
+	public Transform endPanel;
+	public Transform winPanel;
+	public Transform losePanel;
 
 	public static LevelManager Instance;
 
@@ -33,8 +40,8 @@ public class LevelManager : MonoBehaviour {
 		StopGame();
 		backgroundMusic.Stop();
 		endMusic.Play();
-		Transform endPanel = CanvasManager.Instance.transform.Find("EndPanel");
 		endPanel.gameObject.SetActive(true);
+		winPanel.gameObject.SetActive(true);
 	}
 
 	public void LoseGame()
@@ -42,8 +49,8 @@ public class LevelManager : MonoBehaviour {
 		backgroundMusic.Stop();
 		endMusic.Play();
 		StopGame();
-		Transform endPanel = CanvasManager.Instance.transform.Find("EndPanel");
 		endPanel.gameObject.SetActive(true);
+		losePanel.gameObject.SetActive(true);
 	}
 
 	public void StopGame()

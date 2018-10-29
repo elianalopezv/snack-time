@@ -3399,6 +3399,9 @@ MonoBehaviour:
   totalGameTime: 60
   backgroundMusic: {fileID: 686673138}
   endMusic: {fileID: 1923792917}
+  endPanel: {fileID: 1463907137}
+  winPanel: {fileID: 583883156}
+  losePanel: {fileID: 1990867499}
 --- !u!82 &1923792917
 AudioSource:
   m_ObjectHideFlags: 0
