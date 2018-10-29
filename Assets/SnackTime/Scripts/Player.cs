@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
  	private float invertGravity;
 	private bool mouseUp = true;
 	public Animator animator;
+	public AudioSource audioSource;
 
 
 	// Use this for initialization
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour {
 				jumpForce = jumpSpeed;
 				mouseUp = false;
 				animator.SetTrigger("Jump");
+				audioSource.Play();
 			}
 		}
 

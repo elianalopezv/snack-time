@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
 
 	public float totalGameTime;
+	public AudioSource backgroundMusic;
+	public AudioSource endMusic;
+
 	public static LevelManager Instance;
 
 
@@ -28,16 +31,18 @@ public class LevelManager : MonoBehaviour {
 	public void WinGame()
 	{
 		StopGame();
+		backgroundMusic.Stop();
+		endMusic.Play();
 		Transform endPanel = CanvasManager.Instance.transform.Find("EndPanel");
-		endPanel.Find("MessageText").GetComponent<Text>().text = "YOU WIN!";
 		endPanel.gameObject.SetActive(true);
 	}
 
 	public void LoseGame()
 	{
+		backgroundMusic.Stop();
+		endMusic.Play();
 		StopGame();
 		Transform endPanel = CanvasManager.Instance.transform.Find("EndPanel");
-		endPanel.Find("MessageText").GetComponent<Text>().text = "YOU LOSE!";
 		endPanel.gameObject.SetActive(true);
 	}
 
