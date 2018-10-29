@@ -7,8 +7,10 @@ public class Home : MonoBehaviour {
 
 	AudioSource audioSource;
 	
+
 	public void StartGame()
 	{
+		Time.timeScale = 1;
 		audioSource = GetComponent<AudioSource>();
 		audioSource.Play();
 		float duration = audioSource.clip.length - 0.7f;
