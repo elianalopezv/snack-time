@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 56bf19d901be03f498d8f96072529f00
+guid: 864aee389477fe6458b50c8197f5ed20
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -106,12 +106,9 @@ ModelImporter:
     400098: mixamorig:Spine2
     400100: //RootNode
     2100000: 07 - Default
-    2300000: Flash
-    3300000: Flash
     4300000: Flash
-    7400000: Victory
+    7400000: mixamo.com
     9500000: //RootNode
-    11100000: //RootNode
     13700000: Flash
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -127,12 +124,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 2.348149 mm\n\t'mixamorig:LeftLeg' : position error = 5.403615
-      mm\n\t'mixamorig:LeftFoot' : position error = 14.496199 mm\n\t'mixamorig:RightUpLeg'
-      : position error = 2.559385 mm\n\t'mixamorig:RightLeg' : position error = 5.454679
-      mm\n\t'mixamorig:RightFoot' : position error = 14.437763 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -143,42 +135,14 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 1
+    animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Victory
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 34
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -198,7 +162,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.02
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
