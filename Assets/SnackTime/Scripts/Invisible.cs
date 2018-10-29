@@ -6,6 +6,8 @@ public class Invisible : MonoBehaviour {
 
 	void OnBecameInvisible()
 	{
-		LevelManager.Instance.LoseGame();
+        Debug.Log("juancho");
+
+        LevelManager.Instance.LoseGame();
 	}
 }

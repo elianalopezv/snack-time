@@ -7,20 +7,30 @@ ModelImporter:
     100002: Cube.019
     100004: Curve.003
     100006: //RootNode
+    100008: Cube.005
+    100010: Cylinder
     400000: Cube.018
     400002: Cube.019
     400004: Curve.003
     400006: //RootNode
+    400008: Cube.005
+    400010: Cylinder
     2100000: No Name
     2300000: Cube.018
     2300002: Cube.019
     2300004: Curve.003
+    2300006: Cube.005
+    2300008: Cylinder
     3300000: Cube.018
     3300002: Cube.019
     3300004: Curve.003
+    3300006: Cube.005
+    3300008: Cylinder
     4300000: Curve.003
     4300002: Cube.019
     4300004: Cube.018
+    4300006: Cylinder
+    4300008: Cube.005
   externalObjects: {}
   materials:
     importMaterials: 1
