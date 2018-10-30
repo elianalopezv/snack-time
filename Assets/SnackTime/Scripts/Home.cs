@@ -8,6 +8,10 @@ public class Home : MonoBehaviour {
 	AudioSource audioSource;
 	
 
+	void Awake()
+	{
+		Application.targetFrameRate = 180;
+	}
 	public void StartGame()
 	{
 		Time.timeScale = 1;
