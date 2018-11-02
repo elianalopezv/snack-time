@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SnackTime/Scenes/Level.unity
     guid: 566c65fa90c72c240909c1ba62902384
+  - enabled: 1
+    path: Assets/SnackTime/Scenes/Win.unity
+    guid: cbd91176575373146b768236d83b83e7
   m_configObjects: {}

@@ -11,4 +11,10 @@ public class CanvasManager : MonoBehaviour {
 		Instance = this;
 	}
 
+
+	void OnDestroy()
+	{
+		Instance = null;
+	}
+
 }

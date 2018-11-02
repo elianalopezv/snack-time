@@ -96,4 +96,10 @@ public class BlockManager : MonoBehaviour {
 	}
 
 
+	void OnDestroy()
+	{
+		Instance = null;
+	}
+
+
 }

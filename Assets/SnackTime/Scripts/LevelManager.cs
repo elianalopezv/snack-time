@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour {
 	public Transform winPanel;
 	public Transform losePanel;
 
+	private bool won = false;
+
 	public static LevelManager Instance;
 
 
@@ -37,11 +39,12 @@ public class LevelManager : MonoBehaviour {
 
 	public void WinGame()
 	{
-		StopGame();
+		SceneManager.LoadScene(2);
+		/*StopGame();
 		backgroundMusic.Stop();
 		endMusic.Play();
 		endPanel.gameObject.SetActive(true);
-		winPanel.gameObject.SetActive(true);
+		winPanel.gameObject.SetActive(true);*/
 	}
 
 	public void LoseGame()
@@ -66,5 +69,11 @@ public class LevelManager : MonoBehaviour {
 	public void GoToHome()
 	{
 		SceneManager.LoadScene(0);
+	}
+
+
+	void OnDestroy()
+	{
+		Instance = null;
 	}
 }
