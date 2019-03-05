@@ -17,7 +17,7 @@ By the way. The main purpose of this game wasn't just see what happens in the Yu
 What I wanted to do with this idea, actually was to show to all my coworkers that we could make fun videogames in Yuxi too.
 
 Together with the game, I decided to prepare a presentation for all of them with the basics of game development with Unity.
-You can find it [here](bit.ly/2C7cIXB).
+You can find it [here](http://bit.ly/2C7cIXB).
 
 ## 2. How does Snack Time! look?
 
