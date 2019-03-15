@@ -1,4 +1,4 @@
-# Snack Time!
+# Snack Time! :hamburger:
 A delicious runner game.
 
 ## 1. Story of Snack Time!
