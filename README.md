@@ -48,3 +48,4 @@ But if you are a great runner like Flash, and you finally get to the kitchenette
 
 * **Windows:** Download the SnackTime/Windows folder and execute SnackTime.exe
 * **Android:** Download the .apk to your phone from the SnackTime/Android folder. 
+* **Web:** You can play it online ![here.](https://elianalopezv.itch.io/snack-time)
